@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <title>Demo</title>
-    <script defer src="../dist/index.js"></script>
-    <style>
-      .demo {
-        width: 400px;
-        height: 200px;
-        background-color: #84dce2;
-        background-image: paint(fleck);
-        resize: both;
-        overflow: hidden;
-        --fleck-colors: #0193c1 #74d8e6 #0bc0e0 #3ddaf5 #e2f9fe #02313f;
-        --fleck-seed: 123;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="demo"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://glitch.com/favicon.ico" />
+  <title>Demo</title>
+  <script defer src="../dist/index.js"></script>
+  <style>
+    .fleck {
+      width: 300px;
+      height: 420px;
+      background-color: #FFFFFF;
+      background-image: paint(fleck);
+      resize: both;
+      overflow: hidden;
+      --fleck-cell-size: 300;
+      --fleck-density: 80;
+      --fleck-size-base: 10px;
+      --fleck-seed: 973;
+    }
+
+
+    .fleck-theme-pink-white {
+      background-color: hsl(213, 48%, 97%);
+      --fleck-colors: #ffb5d7#a6bfeb #cce0ee #ebaedc;
+    }
+
+    .fleck-theme-blue {
+      background-color: #84dce2;
+      --fleck-colors: #0193c1 #74d8e6 #0bc0e0 #3ddaf5 #e2f9fe #02313f;
+    }
+  </style>
+  <script type="module">
+    import { tw } from 'https://cdn.skypack.dev/twind'
+
+//     document.body.innerHTML = `
+//       <main class="${tw`h-screen bg-purple-400 flex items-center justify-center`}">
+//         <h1 class="${tw`font-bold text(center 5xl white sm:gray-800 md:pink-700)`}">This is Twind!</h1>
+//       </main>
+// `
+  </script>
+</head>
+
+<body>
+  <div class="fleck fleck-theme-blue"></div>
+  <div class="fleck fleck-theme-pink-white"></div>
+</body>
+
 </html>
